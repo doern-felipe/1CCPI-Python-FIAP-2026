@@ -8,3 +8,30 @@
 # ▪ Se A² < B² + C² , apresente a mensagem: TRIANGULO ACUTANGULO;
 # ▪ Se os três lados forem iguais, apresente a mensagem: TRIANGULO EQUILATERO;
 # ▪ Se apenas dois dos lados forem iguais, apresente a mensagem: TRIANGULO ISOSCELES;
+
+# Entrada dos lados
+a = float(input("Digite o lado A: "))
+b = float(input("Digite o lado B: "))
+c = float(input("Digite o lado C: "))
+
+# Ordenando em ordem decrescente
+lados = sorted([a, b, c], reverse=True)
+A, B, C = lados
+
+# Verificação
+if A >= B + C:
+    print("NAO FORMA TRIANGULO")
+else:
+    # Tipo pelos ângulos
+    if A**2 == B**2 + C**2:
+        print("TRIANGULO RETANGULO")
+    elif A**2 > B**2 + C**2:
+        print("TRIANGULO OBTUSANGULO")
+    else:
+        print("TRIANGULO ACUTANGULO")
+
+    # Tipo pelos lados
+    if A == B == C:
+        print("TRIANGULO EQUILATERO")
+    elif A == B or A == C or B == C:
+        print("TRIANGULO ISOSCELES")
